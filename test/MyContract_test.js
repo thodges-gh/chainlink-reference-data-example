@@ -8,15 +8,15 @@ contract('MyContract', accounts => {
   const initialAnswer = new BN(42)
   const decimals = new BN(8)
 
-  let cc, agg
+  let cc, ref
 
   beforeEach(async () => {
-    agg = await MockAggregator.new(decimals, initialAnswer)
-    cc = await MyContract.new(agg.address)
+    ref = await MockAggregator.new(decimals, initialAnswer)
+    cc = await MyContract.new(ref.address)
   })
 
   it('deploys with the specified address', async () => {
-    assert.equal(agg.address, await cc.ref())
+    assert.equal(ref.address, await cc.ref())
   })
 
   describe('#latestAnswer', () => {
