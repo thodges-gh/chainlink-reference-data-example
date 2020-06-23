@@ -1,5 +1,5 @@
 {
-  "name": "@chainlink/box",
+  "name": "@chainlink/feed-box",
   "version": "0.6.0",
   "description": "A Chainlink example in a Truffle box",
   "scripts": {
@@ -15,16 +15,16 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@chainlink/contracts": "^0.0.3",
-    "@chainlink/test-helpers": "0.0.2"
+    "@chainlink/contracts": "^0.0.5",
+    "@chainlink/test-helpers": "0.0.4"
   },
   "devDependencies": {
     "@chainlink/belt": "^0.0.1",
     "@truffle/hdwallet-provider": "^1.0.30",
     "chai": "^4.2.0",
     "depcheck": "^0.9.1",
-    "openzeppelin-test-helpers": "^0.4.3",
-    "solhint": "^2.1.0",
-    "truffle": "^5.1.5"
+    "openzeppelin-test-helpers": "^0.5.1",
+    "solhint": "^3.0.0",
+    "truffle": "^5.1.31"
   }
 }

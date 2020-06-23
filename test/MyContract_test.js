@@ -2,8 +2,10 @@
 const { BN } = require('openzeppelin-test-helpers')
 
 contract('MyContract', accounts => {
-  const MockAggregator = artifacts.require('MockAggregator')
+  const { MockV3Aggregator } = require('@chainlink/contracts/truffle/v0.6/MockV3Aggregator')
   const MyContract = artifacts.require('MyContract')
+
+  const defaultAccount = accounts[0]
 
   const initialAnswer = new BN(42)
   const decimals = new BN(8)
@@ -11,8 +13,8 @@ contract('MyContract', accounts => {
   let cc, ref
 
   beforeEach(async () => {
-    ref = await MockAggregator.new(decimals, initialAnswer)
-    cc = await MyContract.new(ref.address)
+    ref = await MockV3Aggregator.new(decimals, initialAnswer, { from: defaultAccount })
+    cc = await MyContract.new(ref.address, { from: defaultAccount })
   })
 
   it('deploys with the specified address', async () => {
