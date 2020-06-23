@@ -5,21 +5,16 @@ Implementation of a [Chainlink reference contract](https://docs.chain.link/docs/
 ## Requirements
 
 - NPM
+- Yarn
 
 ## Installation
 
 ```bash
-npm install
-```
-
-Or
-
-```bash
-yarn install
+yarn
 ```
 
 ## Test
 
 ```bash
-npm test
+yarn test
 ```

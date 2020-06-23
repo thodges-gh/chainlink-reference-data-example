@@ -1,17 +1,17 @@
-pragma solidity 0.4.24;
+pragma solidity 0.6.10;
 
-import "@chainlink/contracts/src/v0.4/interfaces/AggregatorInterface.sol";
+import "@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol";
 
 contract MyContract {
 
-  AggregatorInterface public ref;
+  AggregatorV3Interface public ref;
 
   constructor(address _ref) public {
-    ref = AggregatorInterface(_ref);
+    ref = AggregatorV3Interface(_ref);
   }
 
-  function latestAnswer() external view returns (int256) {
-    return ref.latestAnswer();
+  function latestAnswer() external view returns (int256 answer) {
+    ( , answer, , , ) = ref.latestRoundData();
   }
 
 }
